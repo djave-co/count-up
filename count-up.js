@@ -23,6 +23,9 @@
 		}, options);
 
 		var intRegex = /^\d+$/;
+		var current_number;
+		var offset;
+
 		if(intRegex.test(settings.countTo) && intRegex.test(settings.startFrom) ) {
 			// Both settings are integers, get started:
 			if(settings.startFrom<settings.countTo){
@@ -36,7 +39,7 @@
 			checkNumber();
 			var timer;
 			function checkNumber(){
-				if(offset==-1){
+				if(offset<0){
 					if(current_number <= settings.countTo)
 					{
 						current_number = settings.counTo;
